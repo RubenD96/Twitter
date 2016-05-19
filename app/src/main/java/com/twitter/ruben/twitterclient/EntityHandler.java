@@ -7,6 +7,7 @@ public abstract class EntityHandler {
 
     public static void test() {
         boolean gay = true;
+        gay = false;
 
     }
 }
