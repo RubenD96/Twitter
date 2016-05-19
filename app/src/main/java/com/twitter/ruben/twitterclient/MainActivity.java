@@ -34,10 +34,21 @@ public class MainActivity extends AppCompatActivity {
             JSONArray statuses = jObj.getJSONArray("statuses");
             if (TweetCollection.getInstance().getTweets().isEmpty()) {
                 for (int i = 0; i < statuses.length(); i++) {
+
                     JSONObject status = statuses.getJSONObject(i);
                     JSONObject userObj = status.getJSONObject("user");
                     String userStr = userObj.getString("name");
                     String tweet = status.getString("text");
+
+                    JSONObject entities = status.getJSONObject("entities");
+                    JSONArray hashtags = entities.getJSONArray("hashtags");
+                    JSONArray symbols = entities.getJSONArray("symbols");
+                    JSONArray user_mentions = entities.getJSONArray("user_mentions");
+                    JSONArray urls = entities.getJSONArray("urls");
+                    JSONArray media = entities.getJSONArray("media");
+
+                    String text_final = "";
+
                     TweetCollection.getInstance().addTweet(userStr, tweet);
                 }
             }
