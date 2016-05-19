@@ -6,6 +6,7 @@ package com.twitter.ruben.twitterclient;
 public abstract class EntityHandler {
 
     public static void test() {
+        boolean gay = true;
 
     }
 }
